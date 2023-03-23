@@ -41,6 +41,3 @@ Please make sure to follow the branching standards mentioned above when contribu
 For more information on contributing, please refer to the `CONTRIBUTING.md` file (if available) or contact the repository owner.
 
 Thank you for your cooperation and happy coding!
-
-After creating the README.md file with the above content, commit and push the changes to your repository. This will ensure that the branching standards are visible and accessible to all project contributors.
-
