@@ -1,5 +1,5 @@
 # GEXP Software: A redesign
-A redesign of the website https://gexpsoftware.com/ which is a WordPress based website.
+A redesign of the website https://gexpsoftware.com/ which is a WordPress based website, here we are migrating it to Nextjs.
 
 
 Welcome to the GEXP Software: A redesign repository! This document will provide you with important information about the project and the branching standards that must be followed.
