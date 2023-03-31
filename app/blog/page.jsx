@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { getAllPostsMeta } from '@/lib/mdx'
 
 const Blog = async () => {
-  const posts = await getAllPostsMeta()
+  const posts = await getAllPostsMeta();
   return (
     <>
       <Breadcrumb
