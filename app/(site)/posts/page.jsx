@@ -1,22 +1,17 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
 import Link from 'next/link'
-import { getAllPostsMeta } from '@/lib/mdx'
+import { getAllPostsMeta } from '../../../lib/mdx'
 
-const Blog = async () => {
+const Page = async () => {
   const posts = await getAllPostsMeta();
+
   return (
-    <>
-      <Breadcrumb
-        pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
-      />
     <section className='py-24'>
       <div className='container'>
-        <h1 className='text-3xl font-bold'>Blog Grid</h1>
+        <h1 className='text-3xl font-bold'>All Posts</h1>
         <div className='flex gap-6 mt-6'>
           {posts?.map(post => (
             <Link
-              href={`blog/${post.slug}`}
+              href={`posts/${post.slug}`}
               key={post?.title}
               className='p-8 rounded-md shadow-md'
             >
@@ -30,8 +25,7 @@ const Blog = async () => {
         </div>
       </div>
     </section>
-    </>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Page
