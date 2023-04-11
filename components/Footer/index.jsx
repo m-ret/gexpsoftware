@@ -17,14 +17,14 @@ const Footer = () => {
                     src="/images/logo/logo-1.png"
                     alt="logo"
                     className="w-full dark:hidden"
-                    width={140}
+                    width={50}
                     height={30}
                   />
                   <Image
                     src="/images/logo/logo-1.png"
                     alt="logo"
                     className="hidden w-full dark:block"
-                    width={140}
+                    width={50}
                     height={30}
                   />
                 </Link>
