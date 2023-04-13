@@ -1,11 +1,8 @@
-import SectionTitle from "../Common/SectionTitle";
-import SingleBlog from "./SingleBlog";
-import blogData from "./blogData";
+import Page from "@/app/blog/page";
 
-const Blog = () => {
+const Blog =  () => {
   return (
-    <>
-    </>
+   <Page/>
   );
 };
 

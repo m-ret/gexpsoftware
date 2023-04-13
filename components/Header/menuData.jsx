@@ -22,31 +22,6 @@ const menuData = [
     title: "Contact",
     path: "/contact",
     newTab: false,
-  },
-   {
-    id: 33,
-    title: "Blog",
-    newTab: false,
-    submenu: [
-      {
-        id: 43,
-        title: "Blog Grid Page",
-        path: "/blog",
-        newTab: false,
-      },
-      {
-        id: 44,
-        title: "Blog Sidebar Page",
-        path: "/blog-sidebar",
-        newTab: false,
-      },
-      {
-        id: 45,
-        title: "Blog Details Page",
-        path: "/blog-details",
-        newTab: false,
-      },
-    ],
   }, 
 ];
 export default menuData;
