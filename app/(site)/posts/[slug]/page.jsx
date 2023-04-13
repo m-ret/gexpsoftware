@@ -12,7 +12,6 @@ export async function generateMetadata({ params }) {
 
 const Page = async ({ params }) => {
   const { content } = await getPageContent(params.slug)
-console.log(params)
   return (
     <section className='py-24'>
       <div className='container py-4 prose'>{content}</div>
