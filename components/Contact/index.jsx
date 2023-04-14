@@ -1,7 +1,5 @@
 "use client";
 import React, { useRef } from "react";
-import Swal from "sweetalert2/dist/sweetalert2.js";
-import "sweetalert2/src/sweetalert2.scss";
 import emailjs from "@emailjs/browser";
 import NewsLatterBox from "./NewsLatterBox";
 
@@ -18,14 +16,10 @@ const Contact = () => {
         "9Ua3mUfB4EG4oPaF3"
       )
       .then(
-        Swal.fire("The message was sended"),
+        alert('The message was sent !!'),
         document.getElementById("formdata").reset(),
         (error) => {
-          Swal.fire({
-            icon: "error",
-            title: `${error.text}`,
-            text: "Something went wrong!",
-          });
+        alert('Error sending the message'+`${error.text}`)
         }
       );
   };
