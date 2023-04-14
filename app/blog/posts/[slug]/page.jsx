@@ -7,9 +7,6 @@ const getPageContent = async slug => {
   console.log({meta});
   return { meta, content }
 }
-
-
-
 const Page = async ({ params }) => {
   const { meta,content } = await getPageContent(params.slug)
   console.log({params});
