@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
-import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 import emailjs from "@emailjs/browser";
 import NewsLatterBox from "./NewsLatterBox";
 
@@ -18,15 +18,14 @@ const Contact = () => {
         "9Ua3mUfB4EG4oPaF3"
       )
       .then(
-        Swal.fire('The message was sended')
-        ,
+        Swal.fire("The message was sended"),
         document.getElementById("formdata").reset(),
         (error) => {
           Swal.fire({
-            icon: 'error',
+            icon: "error",
             title: `${error.text}`,
-            text: 'Something went wrong!',
-          })
+            text: "Something went wrong!",
+          });
         }
       );
   };
@@ -57,7 +56,8 @@ const Contact = () => {
                         Your Name
                       </label>
                       <input
-                      name="from_name"
+                        required
+                        name="from_name"
                         type="text"
                         placeholder="Enter your name"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
@@ -73,6 +73,7 @@ const Contact = () => {
                         Your Email
                       </label>
                       <input
+                        required
                         name="email"
                         type="email"
                         placeholder="Enter your email"
@@ -89,6 +90,7 @@ const Contact = () => {
                         Your Message
                       </label>
                       <textarea
+                        required
                         name="message"
                         rows="5"
                         placeholder="Enter your Message"
