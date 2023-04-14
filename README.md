@@ -34,6 +34,52 @@ Example:
 ```
 fix/develop/correct-login-validation
 ```
+## Installation
+
+Install gexpsoftware with yarn
+
+```bash
+  cd gexpsoftware
+  yarn install 
+```
+    
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  yarn test
+```
+
+
+## Tech Stack
+
+**Client:** Nextjs,TailwindCSS
+
+
+
+
+## Features
+
+- Light/dark mode toggle
+- Fullscreen mode
+- Cross platform
+
+
+## Prerequisites
+
+- Node: >=6.9.0
+- Yarn: 1.22.19
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  yarn run build
+```
+
 ## Contributing
 
 Please make sure to follow the branching standards mentioned above when contributing to this project. Failure to adhere to these standards may result in your pull request being rejected.
