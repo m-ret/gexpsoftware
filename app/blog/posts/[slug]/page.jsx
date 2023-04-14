@@ -4,12 +4,10 @@ import SharePost from "@/components/Blog/SharePost";
 import TagButton from "@/components/Blog/TagButton";
 const getPageContent = async slug => {
   const { meta, content,  } = await getPostBySlug(slug)
-  console.log({meta});
   return { meta, content }
 }
 const Page = async ({ params }) => {
   const { meta,content } = await getPageContent(params.slug)
-  console.log({params});
 
   return (
    
