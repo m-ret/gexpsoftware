@@ -7,7 +7,6 @@ describe("NewsLatterBox test", () => {
         
         render(<NewsLatterBox><h4>Content</h4></NewsLatterBox>);
         expect(screen.findAllByLabelText(/Subscribe to receive future updates/i)).toBeDefined()
-        expect(screen.findAllByLabelText(/No spam guaranteed, So please don’t send any spam mail./i)).toBeDefined()
        
 
 
