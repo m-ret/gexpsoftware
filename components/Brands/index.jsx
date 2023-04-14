@@ -36,7 +36,7 @@ const brandsData = [
 const Brands = () => {
   return (
     <section className="pt-16">
-      <div className="container">
+      <div className="container" data-testid="brands">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div

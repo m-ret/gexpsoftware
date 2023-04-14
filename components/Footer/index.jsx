@@ -32,7 +32,7 @@ const Footer = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer lobortis.
                 </p>
-                <div className="flex items-center">
+                <div className="flex items-center" data-testid="social-media">
                   <a
                     href="https://www.facebook.com/profile.php?id=100084373377998"
                     aria-label="social-link"
@@ -91,7 +91,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <a
-                      href="/"
+                      href="/blog"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
@@ -100,7 +100,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/about"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
