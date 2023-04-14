@@ -1,9 +1,38 @@
+"use client";
+import React, { useRef } from "react";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+import emailjs from "@emailjs/browser";
 import NewsLatterBox from "./NewsLatterBox";
 
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_yzjvqe9",
+        "template_jewwm48",
+        form.current,
+        "9Ua3mUfB4EG4oPaF3"
+      )
+      .then(
+        Swal.fire('The message was sended')
+        ,
+        document.getElementById("formdata").reset(),
+        (error) => {
+          Swal.fire({
+            icon: 'error',
+            title: `${error.text}`,
+            text: 'Something went wrong!',
+          })
+        }
+      );
+  };
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
-      <div className="container" >
+      <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
             <div
@@ -17,7 +46,7 @@ const Contact = () => {
               <p className="mb-12 text-base font-medium text-body-color">
                 Our support team will get back to you ASAP via email.
               </p>
-              <form>
+              <form ref={form} onSubmit={sendEmail} id="formdata">
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
@@ -28,6 +57,7 @@ const Contact = () => {
                         Your Name
                       </label>
                       <input
+                      name="from_name"
                         type="text"
                         placeholder="Enter your name"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
@@ -43,6 +73,7 @@ const Contact = () => {
                         Your Email
                       </label>
                       <input
+                        name="email"
                         type="email"
                         placeholder="Enter your email"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
@@ -66,7 +97,11 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="w-full px-4">
-                    <button className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
+                    <button
+                      type="submit"
+                      value="Send"
+                      className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
+                    >
                       Submit Ticket
                     </button>
                   </div>
