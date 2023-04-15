@@ -6,7 +6,7 @@ Welcome to the GEXP Software: A Redesign repository! This document provides you 
 
 ## Project Details
 
-### This project uses [Nextjs 13.1.6](https://nextjs.org/blog/next-13) and requires `Node v18.16.0` and `Yarn v1.22.19`. To install dependencies, use the following command:
+This project uses [Nextjs 13.1.6](https://nextjs.org/blog/next-13) and requires `Node v18.16.0` and `Yarn v1.22.19`. To install dependencies, use the following command:
 
 Install dependencies:
 ```javascript
