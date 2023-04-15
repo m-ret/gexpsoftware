@@ -1,58 +1,65 @@
 # GEXP Software: A redesign
-A redesign of the website https://gexpsoftware.com/ which is a WordPress based website, here we are migrating it to Nextjs.
 
-Welcome to the GEXP Software: A redesign repository! This document will provide you with important information about the project and the branching standards that must be followed.
+GEXP Software is a website currently built on WordPress. This repository is the redesign project of the website, where it is being migrated to Next.js.
 
-### This project uses [Nextjs 13.1.6](https://nextjs.org/blog/next-13)
+Welcome to the GEXP Software: A Redesign repository! This document provides you with essential information about the project and the branching standards that must be followed.
 
-Node: `18.16.0`
+## Project Details
 
-Yarn: `1.22.19`
+### This project uses [Nextjs 13.1.6](https://nextjs.org/blog/next-13) and requires `Node v18.16.0` and `Yarn v1.22.19`. To install dependencies, use the following command:
 
 Install dependencies:
-```bash
+```javascript
 yarn install
 ```
 Run the project:
-```bash
+```javascript
 yarn dev
 ```
 
 ## Branching Standards
+In this project, we follow strict branching standards to keep our repository organized and our development process streamlined.
 
-In this project, we follow a strict branching naming convention to keep our repository organized and our development process streamlined. Please adhere to the following standards when creating new branches:
+### Branch Naming Convention
+Please adhere to the following naming conventions when creating new branches:
 
-### Feature Branches
+#### Feature Branches
+To create a new feature, use the following format:
+```javascript
+feature/{name of the base branch}/{short description of the feature}
+```
+Replace `{name of the base branch}` with the name of the branch you are branching off. This is typically either main or develop.
 
-For new features, please create a branch with the following format:
-
-feature/{name of the base branch}/{short description of the issue}
-
-- Replace `{name of the base branch}` with the name of the branch you are branching off. Typically, this will be `main` or `develop`.
-- Replace `{short description of the issue}` with a concise description of the feature being implemented. Use hyphens to separate words.
+Replace `{short description of the feature}` with a brief description of the feature you are adding, using hyphens to separate words.
 
 Example:
-```
+
+```javascript
 feature/develop/add-login-functionality
 ```
-### Bug Fix Branches
 
-For bug fixes, please create a branch with the following format:
+#### Bug Fix Branches
+To fix a bug, use the following format:
 
+```javascript
 fix/{name of the base branch}/{short description of the bug}
+```
+Replace `{name of the base branch}` with the name of the branch you are branching off. This is typically either main or develop.
 
-- Replace `{name of the base branch}` with the name of the branch you are branching off. Typically, this will be `main` or `develop`.
-- Replace `{short description of the bug}` with a concise description of the bug being fixed. Use hyphens to separate words.
+Replace `{short description of the bug}` with a brief description of the bug you are fixing, using hyphens to separate words.
 
 Example:
-```
+
+```javascript
 fix/develop/correct-login-validation
 ```
-## Contributing
 
-Please make sure to follow the branching standards mentioned above when contributing to this project. Failure to adhere to these standards may result in your pull request being rejected.
+## Pull Requests
+NEVER push to the main branch directly. Always create a pull request (PR) from your current branch against the develop branch. I will review your changes and merge them into the develop branch before merging them into the main branch.
 
-Thank you for your cooperation!
+When contributing to this project, make sure to follow the branching standards mentioned above. Failure to adhere to these standards may result in your pull request being rejected.
+
+Thank you for contributing to the GEXP Software redesign project!
 
 ### [🔌 Documentation](https://nextjstemplates.com/docs)
 
