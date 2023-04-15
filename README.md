@@ -4,6 +4,20 @@ A redesign of the website https://gexpsoftware.com/ which is a WordPress based w
 
 Welcome to the GEXP Software: A redesign repository! This document will provide you with important information about the project and the branching standards that must be followed.
 
+Node: `18.16.0`
+
+Yarn: `1.22.19`
+
+Install dependencies:
+```bash
+yarn install
+```
+Run the project:
+```bash
+yarn dev
+```
+
+
 ## Branching Standards
 
 In this project, we follow a strict branching naming convention to keep our repository organized and our development process streamlined. Please adhere to the following standards when creating new branches:
