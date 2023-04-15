@@ -4,6 +4,8 @@ A redesign of the website https://gexpsoftware.com/ which is a WordPress based w
 
 Welcome to the GEXP Software: A redesign repository! This document will provide you with important information about the project and the branching standards that must be followed.
 
+### This project uses [Nextjs 13.1.6](https://nextjs.org/blog/next-13)
+
 Node: `18.16.0`
 
 Yarn: `1.22.19`
