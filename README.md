@@ -1,35 +1,61 @@
-# Startup - Free Next.js Startup Website Template
+# GEXP Software: A redesign
+A redesign of the website https://gexpsoftware.com/ which is a WordPress based website, here we are migrating it to Nextjs.
 
-Startup free, open-source, and premium-quality startup website template for Next.js comes with everything you need to launch a startup, business, or SaaS website, including all essential sections, components, and pages.
+Welcome to the GEXP Software: A redesign repository! This document will provide you with important information about the project and the branching standards that must be followed.
 
-If you're looking for a high-quality and visually appealing, feature-rich Next.js Template for your next startup, SaaS, or business website, this is the perfect choice and starting point for you!
+### This project uses [Nextjs 13.1.6](https://nextjs.org/blog/next-13)
 
-### ✨ Key Features
-- Crafted for Startup and SaaS Business
-- Next.js 13 and Tailwind CSS
-- All Essential Business Sections and Pages
-- High-quality and Clean Design
-- Dark and Light Version
-- TypeScript Support
-and Much More ...
+Node: `18.16.0`
 
-### [🚀 View Demo](https://startup.nextjstemplates.com/)
+Yarn: `1.22.19`
 
-### [📦 Download](https://nextjstemplates.com/templates/startup)
+Install dependencies:
+```bash
+yarn install
+```
+Run the project:
+```bash
+yarn dev
+```
+
+## Branching Standards
+
+In this project, we follow a strict branching naming convention to keep our repository organized and our development process streamlined. Please adhere to the following standards when creating new branches:
+
+### Feature Branches
+
+For new features, please create a branch with the following format:
+
+feature/{name of the base branch}/{short description of the issue}
+
+- Replace `{name of the base branch}` with the name of the branch you are branching off. Typically, this will be `main` or `develop`.
+- Replace `{short description of the issue}` with a concise description of the feature being implemented. Use hyphens to separate words.
+
+Example:
+```
+feature/develop/add-login-functionality
+```
+### Bug Fix Branches
+
+For bug fixes, please create a branch with the following format:
+
+fix/{name of the base branch}/{short description of the bug}
+
+- Replace `{name of the base branch}` with the name of the branch you are branching off. Typically, this will be `main` or `develop`.
+- Replace `{short description of the bug}` with a concise description of the bug being fixed. Use hyphens to separate words.
+
+Example:
+```
+fix/develop/correct-login-validation
+```
+## Contributing
+
+Please make sure to follow the branching standards mentioned above when contributing to this project. Failure to adhere to these standards may result in your pull request being rejected.
+
+Thank you for your cooperation!
 
 ### [🔌 Documentation](https://nextjstemplates.com/docs)
 
 ### ⚡ Deploy Now
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FNextJSTemplates%2Fstartup-nextjs)
-
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/NextJSTemplates/startup-nextjs)
-
-
-### 📄 License
-Startup is 100% free and open-source, feel free to use with your personal and commercial projects.
-
-### 💜 Support
-If you like the template, please star this repository to inspire the team to create more stuff like this and reach more users like you!
-
-### ✨ Explore and Download - Free [Next.js Templates](https://nextjstemplates.com)
