@@ -4,33 +4,33 @@ import Image from "next/image";
 const brandsData: Brand[] = [
   {
     id: 1,
-    name: "UIdeck",
-    href: "https://uideck.com",
-    image: "/images/brands/uideck.svg",
+    name: "IBM",
+    href: "https://www.ibm.com",
+    image: "/images/brands/ibm.svg",
   },
   {
     id: 2,
-    name: "Tailgrids",
-    href: "https://tailgrids.com",
-    image: "/images/brands/tailgrids.svg",
+    name: "Televisa",
+    href: "https://www.televisa.com",
+    image: "/images/brands/televisa.svg",
   },
   {
     id: 3,
     name: "Lineicons",
-    href: "https://lineicons.com",
-    image: "/images/brands/lineicons.svg",
+    href: "https://www.univision.com",
+    image: "/images/brands/univision.svg",
   },
   {
     id: 4,
-    name: "GrayGrids",
-    href: "https://graygrids.com",
-    image: "/images/brands/graygrids.svg",
+    name: "Universal",
+    href: "https://www.universalmusic.com",
+    image: "/images/brands/universal-3.svg",
   },
   {
     id: 5,
-    name: "TailAdmin",
-    href: "https://tailadmin.com",
-    image: "/images/brands/tailadmin.svg",
+    name: "Provectus",
+    href: "https://provectus.com",
+    image: "/images/brands/provectus.svg",
   },
 ];
 
