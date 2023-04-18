@@ -12,10 +12,10 @@ const Contact = () => {
               "
             >
               <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Need Help? Open a Ticket
+              Talk To Us
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
-                Our support team will get back to you ASAP via email.
+              Please don’t hesitate to reach out to us if you have any questions or concerns. We are here to assist and help find solutions.
               </p>
               <form>
                 <div className="-mx-4 flex flex-wrap">
@@ -67,7 +67,7 @@ const Contact = () => {
                   </div>
                   <div className="w-full px-4">
                     <button className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
-                      Submit Ticket
+                      Send
                     </button>
                   </div>
                 </div>
@@ -75,7 +75,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <NewsLatterBox />
+           {/* <NewsLatterBox />*/}
           </div>
         </div>
       </div>

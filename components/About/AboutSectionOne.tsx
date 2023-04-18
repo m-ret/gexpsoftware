@@ -24,8 +24,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
+                title="At GEXP Software, we are passionate about helping our clients succeed."
+                paragraph="We take pride in our work and are committed to delivering exceptional service and expertise to our clients. If you're looking for a trusted partner to help you with your software development and staffing needs, look no further than GEXP Software."
                 mb="44px"
               />
 
