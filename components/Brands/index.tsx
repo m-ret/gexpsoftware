@@ -12,13 +12,13 @@ const brandsData: Brand[] = [
     id: 2,
     name: "Televisa",
     href: "https://www.televisa.com",
-    image: "/images/brands/televisa.svg",
+    image: "/images/brands/Logo_de_Grupo_Televisa.svg",
   },
   {
     id: 3,
     name: "Lineicons",
     href: "https://www.univision.com",
-    image: "/images/brands/univision.svg",
+    image: "/images/brands/Univision_logo.svg",
   },
   {
     id: 4,
@@ -32,6 +32,24 @@ const brandsData: Brand[] = [
     href: "https://provectus.com",
     image: "/images/brands/provectus.svg",
   },
+  {
+    id: 6,
+    name: "Automation",
+    href: "https://www.automationanywhere.com",
+    image: "/images/brands/Automation.svg",
+  },
+  {
+    id: 7,
+    name: "Prodigious",
+    href: "https://www.prodigious.com",
+    image: "/images/brands/prodigious-1.svg",
+  },
+  {
+    id: 7,
+    name: "MyBasePay",
+    href: "https://mybasepay.com",
+    image: "/images/brands/MyBasePay.svg",
+  },
 ];
 
 const Brands = () => {
@@ -41,7 +59,7 @@ const Brands = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
-              className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark py-8 px-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:py-[40px] md:px-[50px] xl:p-[50px] 2xl:py-[60px] 2xl:px-[70px]"
+              className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark py-8 px-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:py-[60px] md:px-[50px] xl:p-[50px] 2xl:py-[60px] 2xl:px-[70px]"
               data-wow-delay=".1s
               "
             >
