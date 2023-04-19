@@ -48,7 +48,8 @@ const menuData: Menu[] = [
         path: "/blog",
         newTab: false,
       },
-      {
+      
+      /*{
         id: 44,
         title: "Blog Sidebar Page",
         path: "/blog-sidebar",
@@ -77,7 +78,7 @@ const menuData: Menu[] = [
         title: "Error Page",
         path: "/error",
         newTab: false,
-      },
+      },*/
     ],
   },
 ];

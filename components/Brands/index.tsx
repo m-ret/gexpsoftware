@@ -4,33 +4,51 @@ import Image from "next/image";
 const brandsData: Brand[] = [
   {
     id: 1,
-    name: "UIdeck",
-    href: "https://uideck.com",
-    image: "/images/brands/uideck.svg",
+    name: "IBM",
+    href: "https://www.ibm.com",
+    image: "/images/brands/ibm.svg",
   },
   {
     id: 2,
-    name: "Tailgrids",
-    href: "https://tailgrids.com",
-    image: "/images/brands/tailgrids.svg",
+    name: "Televisa",
+    href: "https://www.televisa.com",
+    image: "/images/brands/Logo_de_Grupo_Televisa.svg",
   },
   {
     id: 3,
     name: "Lineicons",
-    href: "https://lineicons.com",
-    image: "/images/brands/lineicons.svg",
+    href: "https://www.univision.com",
+    image: "/images/brands/Univision_logo.svg",
   },
   {
     id: 4,
-    name: "GrayGrids",
-    href: "https://graygrids.com",
-    image: "/images/brands/graygrids.svg",
+    name: "Universal",
+    href: "https://www.universalmusic.com",
+    image: "/images/brands/universal-3.svg",
   },
   {
     id: 5,
-    name: "TailAdmin",
-    href: "https://tailadmin.com",
-    image: "/images/brands/tailadmin.svg",
+    name: "Provectus",
+    href: "https://provectus.com",
+    image: "/images/brands/provectus.svg",
+  },
+  {
+    id: 6,
+    name: "Automation",
+    href: "https://www.automationanywhere.com",
+    image: "/images/brands/Automation.svg",
+  },
+  {
+    id: 7,
+    name: "Prodigious",
+    href: "https://www.prodigious.com",
+    image: "/images/brands/prodigious-1.svg",
+  },
+  {
+    id: 7,
+    name: "MyBasePay",
+    href: "https://mybasepay.com",
+    image: "/images/brands/MyBasePay.svg",
   },
 ];
 
@@ -41,7 +59,7 @@ const Brands = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
-              className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark py-8 px-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:py-[40px] md:px-[50px] xl:p-[50px] 2xl:py-[60px] 2xl:px-[70px]"
+              className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark py-8 px-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:py-[60px] md:px-[50px] xl:p-[50px] 2xl:py-[60px] 2xl:px-[70px]"
               data-wow-delay=".1s
               "
             >
