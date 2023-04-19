@@ -50,6 +50,12 @@ const brandsData: Brand[] = [
     href: "https://mybasepay.com",
     image: "/images/brands/MyBasePay.svg",
   },
+  {
+    id: 8,
+    name: "ChenMed",
+    href: "https://www.chenmed.com",
+    image: "/images/brands/chenMed.webp",
+  },
 ];
 
 const Brands = () => {
