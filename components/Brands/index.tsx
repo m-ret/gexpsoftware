@@ -1,6 +1,6 @@
 import { Brand } from "@/types/brand";
 import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
+
 
 const brandsData: Brand[] = [
   {
@@ -55,7 +55,7 @@ const brandsData: Brand[] = [
     id: 8,
     name: "ChenMed",
     href: "https://www.chenmed.com",
-    image: "/images/brands/chenMed.webp",
+    image: "/images/brands/chenMed.svg",
   },
 ];
 
@@ -69,7 +69,7 @@ const Brands = () => {
           <div className="w-full px-4">
           <h1 className="mb-5 text-2xl text-center font-bold text-black dark:text-white sm:text-3xl">
                   Trus by
-                </h1>
+          </h1>
             
             <div
               className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark py-8 px-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:py-[60px] md:px-[50px] xl:p-[50px] 2xl:py-[60px] 2xl:px-[70px]"
