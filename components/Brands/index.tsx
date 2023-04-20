@@ -68,7 +68,7 @@ const Brands = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
           <h1 className="mb-5 text-2xl text-center font-bold text-black dark:text-white sm:text-3xl">
-                  Trus by
+              Trust By
           </h1>
             
             <div
