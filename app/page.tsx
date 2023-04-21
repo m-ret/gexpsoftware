@@ -8,6 +8,7 @@ import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
+import TechStacks from "@/components/TechStack";
 import Video from "@/components/Video";
 import { Inter } from "@next/font/google";
 
@@ -19,7 +20,7 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <Features />
-       <Video /> 
+       <TechStacks /> 
       <Brands />
       <AboutSectionOne />
       <AboutSectionTwo />

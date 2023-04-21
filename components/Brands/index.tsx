@@ -17,7 +17,7 @@ const brandsData: Brand[] = [
   },
   {
     id: 3,
-    name: "Lineicons",
+    name: "Univision",
     href: "https://www.univision.com",
     image: "/images/brands/Univision_logo.svg",
   },
