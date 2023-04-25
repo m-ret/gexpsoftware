@@ -1,64 +1,9 @@
-import { Brand } from "@/types/brand";
-import Image from "next/image";
+import brandsData from "./constants";
+import SingleBrand from "./SingleBrand";
 import SectionTitle from "../Common/SectionTitle";
 
 
-const brandsData: Brand[] = [
-  {
-    id: 1,
-    name: "IBM",
-    href: "https://www.ibm.com",
-    image: "/images/brands/ibm.svg",
-  },
-  {
-    id: 2,
-    name: "Televisa",
-    href: "https://www.televisa.com",
-    image: "/images/brands/Logo_de_Grupo_Televisa.svg",
-  },
-  {
-    id: 3,
-    name: "Univision",
-    href: "https://www.univision.com",
-    image: "/images/brands/Univision_logo.svg",
-  },
-  {
-    id: 4,
-    name: "Universal",
-    href: "https://www.universalmusic.com",
-    image: "/images/brands/universal-3.svg",
-  },
-  {
-    id: 5,
-    name: "Provectus",
-    href: "https://provectus.com",
-    image: "/images/brands/provectus.svg",
-  },
-  {
-    id: 6,
-    name: "Automation",
-    href: "https://www.automationanywhere.com",
-    image: "/images/brands/Automation.svg",
-  },
-  {
-    id: 7,
-    name: "Prodigious",
-    href: "https://www.prodigious.com",
-    image: "/images/brands/logo-prodigious.svg",
-  },
-  {
-    id: 7,
-    name: "MyBasePay",
-    href: "https://mybasepay.com",
-    image: "/images/brands/MyBasePay.svg",
-  },
-  {
-    id: 8,
-    name: "ChenMed",
-    href: "https://www.chenmed.com",
-    image: "/images/brands/chenMed.svg",
-  },
-];
+
 
 const Brands = () => {
   return (
@@ -98,23 +43,3 @@ const Brands = () => {
 
 export default Brands;
 
-const SingleBrand = ({ brand }: { brand: Brand }) => {
-  const { href, image, name } = brand;
-
-  return (
-
-    <div className="mx-3 flex w-full max-w-[160px] items-center justify-center py-[15px] sm:mx-4 lg:max-w-[130px] xl:mx-6 xl:max-w-[150px] 2xl:mx-8 2xl:max-w-[160px]">
-      <a
-        href={href}
-        target="_blank"
-        rel="nofollow noreferrer"
-        className="relative h-10 w-full opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0 dark:opacity-60 dark:hover:opacity-100"
-      >
-        <Image src={image} alt={name} fill />
-      </a>
-
-
-    </div>
-  
-  );
-};
