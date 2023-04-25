@@ -1,5 +1,6 @@
 import { Brand } from "@/types/brand";
 import Image from "next/image";
+import SectionTitle from "../Common/SectionTitle";
 
 
 const brandsData: Brand[] = [
@@ -43,7 +44,7 @@ const brandsData: Brand[] = [
     id: 7,
     name: "Prodigious",
     href: "https://www.prodigious.com",
-    image: "/images/brands/prodigious-1.svg",
+    image: "/images/brands/logo-prodigious.svg",
   },
   {
     id: 7,
@@ -67,9 +68,12 @@ const Brands = () => {
 
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-          <h1 className="mb-5 text-2xl text-center font-bold text-black dark:text-white sm:text-3xl">
-              Trust By
-          </h1>
+          <SectionTitle
+            title="Trust By"
+            paragraph=""
+            center
+            mb="80px"
+          />
             
             <div
               className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark py-8 px-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:py-[60px] md:px-[50px] xl:p-[50px] 2xl:py-[60px] 2xl:px-[70px]"
