@@ -5,7 +5,7 @@ const SingleTechStack = ({ techstack }: { techstack: TechStackType }) => {
   const { image, name } = techstack;
 
   return (
-    <div className="mx-3 flex w-full max-w-[160px] items-center justify-center py-[15px] sm:mx-4 lg:max-w-[130px] xl:mx-6 xl:max-w-[150px] 2xl:mx-8 2xl:max-w-[160px]">
+    <div className="mx-3 flex w-full max-w-[120px] items-center justify-center py-[15px] sm:mx-4 lg:max-w-[130px] xl:mx-6 xl:max-w-[150px] 2xl:mx-8 2xl:max-w-[160px]">
       <a
         target="_blank"
         rel="nofollow noreferrer"
