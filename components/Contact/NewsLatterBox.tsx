@@ -7,7 +7,7 @@ const NewsLatterBox = () => {
       <h3 className="mb-4 text-2xl font-bold leading-tight text-black dark:text-white">
         Subscribe to receive future updates
       </h3>
-      <p className="mb-11 border-b border-body-color border-opacity-25 pb-11 text-base font-medium leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
+      <p className="mb-11 border-b border-body-color border-opacity-25 pb-11 text-base font-medium leading-relaxed text-body-color dark:border-white dark:border-opacity-25 dark:text-white">
         Lorem ipsum dolor sited Sed ullam corper consectur adipiscing Mae ornare
         massa quis lectus.
       </p>
@@ -29,7 +29,7 @@ const NewsLatterBox = () => {
           value="Subscribe"
           className="duration-80 mb-4 w-full cursor-pointer rounded-md border border-transparent bg-primary py-3 px-6 text-center text-base font-medium text-white outline-none transition ease-in-out hover:bg-opacity-80 hover:shadow-signUp focus-visible:shadow-none"
         />
-        <p className="text-center text-base font-medium leading-relaxed text-body-color">
+        <p className="text-center text-base font-medium leading-relaxed text-body-color dark:text-white">
           No spam guaranteed, So please don’t send any spam mail.
         </p>
       </form>
@@ -43,7 +43,7 @@ const NewsLatterBox = () => {
         >
           <mask
             id="mask0_88:141"
-            style={{ maskType: "alpha" }}
+            style={{ maskType: 'alpha' }}
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"

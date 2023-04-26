@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { TechStackType } from "@/types/techstack";
+import Image from 'next/image';
+import { TechStackType } from '@/types/techstack';
 
 const SingleTechStack = ({ techstack }: { techstack: TechStackType }) => {
   const { image, name } = techstack;
@@ -16,4 +16,5 @@ const SingleTechStack = ({ techstack }: { techstack: TechStackType }) => {
     </div>
   );
 };
+
 export default SingleTechStack;

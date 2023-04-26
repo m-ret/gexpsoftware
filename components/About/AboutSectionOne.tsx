@@ -1,5 +1,5 @@
-import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
+import Image from 'next/image';
+import SectionTitle from '../Common/SectionTitle';
 
 const checkIcon = (
   <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
@@ -9,7 +9,7 @@ const checkIcon = (
 
 const AboutSectionOne = () => {
   const List = ({ text }) => (
-    <p className="mb-5 flex items-center text-lg font-medium text-body-color">
+    <p className="mb-5 flex items-center text-lg font-medium text-body-color dark:text-white">
       <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
         {checkIcon}
       </span>
@@ -24,8 +24,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="At GEXP Software, we are passionate about helping our clients succeed."
-                paragraph="We take pride in our work and are committed to delivering exceptional service and expertise to our clients. If you're looking for a trusted partner to help you with your software development and staffing needs, look no further than GEXP Software."
+                title="At Gexp Software, we are passionate about helping our clients succeed."
+                paragraph="We take pride in our work and are committed to delivering exceptional service and expertise to our clients. If you're looking for a trusted partner to help you with your software development and staffing needs, look no further than Gexp Software."
                 mb="44px"
               />
 

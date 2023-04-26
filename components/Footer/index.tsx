@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -14,22 +14,24 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src="images/logo/logo-12.svg"
+                    src="images/logo/1.svg"
                     alt="logo"
                     className="w-full dark:hidden"
                     width={140}
                     height={30}
                   />
                   <Image
-                    src="images/logo/logo-11.svg"
+                    src="images/logo/2.svg"
                     alt="logo"
                     className="hidden w-full dark:block"
                     width={140}
                     height={30}
                   />
                 </Link>
-                <p className="mb-9 text-base font-medium leading-relaxed text-body-color">
-                  GEXP Software specializes in putting together teams and delivering customized digital product solutions to fit any level of expertise, complexity, or scale.
+                <p className="mb-9 text-base font-medium leading-relaxed text-body-color dark:text-white">
+                  Gexp Software specializes in putting together teams and
+                  delivering customized digital product solutions to fit any
+                  level of expertise, complexity, or scale.
                 </p>
                 <div className="flex items-center">
                   <a
@@ -101,28 +103,28 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      Blog{" "}
+                      {' '}
+                      Blog{' '}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      Pricing{" "}
+                      {' '}
+                      Pricing{' '}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      About{" "}
+                      {' '}
+                      About{' '}
                     </a>
                   </li>
                 </ul>
@@ -138,28 +140,28 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      TOS{" "}
+                      {' '}
+                      TOS{' '}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      Privacy Policy{" "}
+                      {' '}
+                      Privacy Policy{' '}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      Refund Policy{" "}
+                      {' '}
+                      Refund Policy{' '}
                     </a>
                   </li>
                 </ul>
@@ -175,28 +177,28 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      Open Support Ticket{" "}
+                      {' '}
+                      Open Support Ticket{' '}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      Terms of Use{" "}
+                      {' '}
+                      Terms of Use{' '}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary dark:text-white"
                     >
-                      {" "}
-                      About{" "}
+                      {' '}
+                      About{' '}
                     </a>
                   </li>
                 </ul>
@@ -207,7 +209,10 @@ const Footer = () => {
         <div className="bg-primary/10 py-8">
           <div className="container">
             <p className="text-center text-base text-body-color dark:text-white">
-            ©2023 <a href="/" rel="nofollow noopener">GEXP Software</a>
+              ©{new Date().getFullYear()}{' '}
+              <a href="/" rel="nofollow noopener">
+                Gexp Software
+              </a>
             </p>
           </div>
         </div>
@@ -222,7 +227,7 @@ const Footer = () => {
             <circle opacity="0.8" cx="49.5" cy="49.5" r="49.5" fill="#959CB1" />
             <mask
               id="mask0_94:899"
-              style={{ maskType: "alpha" }}
+              style={{ maskType: 'alpha' }}
               maskUnits="userSpaceOnUse"
               x="0"
               y="0"

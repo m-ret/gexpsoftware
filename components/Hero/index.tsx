@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -14,11 +14,16 @@ const Hero = () => {
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                Gexp Software <p>Result Driven, Quality Obsessed.</p> 
+                <h1 className="mb-5 leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:leading-tight">
+                  Gexp Software
+                </h1>
+                <h1 className="mb-5 text-3xl leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight">
+                  Result Driven <br /> Quality Obsessed
                 </h1>
                 <p className="mb-12 text-base font-medium !leading-relaxed text-body-color dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
-                GEXP Software specializes in putting together teams and delivering customized digital product solutions to fit any level of expertise, complexity, or scale.
+                  Gexp Software specializes in putting together teams and
+                  delivering customized digital product solutions to fit any
+                  level of expertise, complexity, or scale.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link

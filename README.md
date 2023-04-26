@@ -1,8 +1,8 @@
-# GEXP Software: A redesign
+# Gexp Software: A redesign
 
-GEXP Software is a website currently built on WordPress. This repository is the redesign project of the website, where it is being migrated to Next.js.
+Gexp Software is a website currently built on WordPress. This repository is the redesign project of the website, where it is being migrated to Next.js.
 
-Welcome to the GEXP Software: A Redesign repository! This document provides you with essential information about the project and the branching standards that must be followed.
+Welcome to the Gexp Software: A Redesign repository! This document provides you with essential information about the project and the branching standards that must be followed.
 
 ## Project Details
 
@@ -59,7 +59,7 @@ NEVER push to the main branch directly. Always create a pull request (PR) from y
 
 When contributing to this project, make sure to follow the branching standards mentioned above. Failure to adhere to these standards may result in your pull request being rejected.
 
-Thank you for contributing to the GEXP Software redesign project!
+Thank you for contributing to the Gexp Software redesign project!
 
 ### [🔌 Documentation](https://nextjstemplates.com/docs)
 

@@ -14,9 +14,12 @@ module.exports = {
     colors: {
       current: "currentColor",
       transparent: "transparent",
-      white: "#FFFFFF",
-      black: "#090E34",
       dark: "#1D2144",
+      // black: "#090E34", // Default black from the template
+      black: "#242423",
+      white: "#FFFFFF",
+      linen: "#EAE3D2",
+      wheat: "#F9F7F3",
       primary: "#4A6CF7",
       yellow: "#FBB040",
       "body-color": "#959CB1",
