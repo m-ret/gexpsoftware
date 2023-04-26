@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const RelatedPost = ({
   image,
   slug,
   title,
-  date,
+  date
 }: {
   image: string;
   slug: string;

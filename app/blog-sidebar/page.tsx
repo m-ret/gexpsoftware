@@ -1,13 +1,13 @@
-import RelatedPost from "@/components/Blog/RelatedPost";
-import SharePost from "@/components/Blog/SharePost";
-import TagButton from "@/components/Blog/TagButton";
-import NewsLatterBox from "@/components/Contact/NewsLatterBox";
-import Image from "next/image";
+import RelatedPost from '@/components/Blog/RelatedPost';
+import SharePost from '@/components/Blog/SharePost';
+import TagButton from '@/components/Blog/TagButton';
+import NewsLatterBox from '@/components/Contact/NewsLatterBox';
+import Image from 'next/image';
 
 const BlogSidebarPage = () => {
   return (
     <>
-      <section className="overflow-hidden pt-[180px] pb-[120px]">
+      <section className="overflow-hidden pb-[120px] pt-[180px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 lg:w-8/12">
@@ -18,7 +18,7 @@ const BlogSidebarPage = () => {
                 </h2>
                 <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                   <div className="flex flex-wrap items-center">
-                    <div className="mr-10 mb-5 flex items-center">
+                    <div className="mb-5 mr-10 flex items-center">
                       <div className="mr-4">
                         <div className="relative h-10 w-10 overflow-hidden rounded-full">
                           <Image
@@ -91,7 +91,7 @@ const BlogSidebarPage = () => {
                   <div className="mb-5">
                     <a
                       href="#0"
-                      className="inline-flex items-center justify-center rounded-full bg-primary py-2 px-4 text-sm font-semibold text-white"
+                      className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white"
                     >
                       Design
                     </a>
@@ -119,8 +119,8 @@ const BlogSidebarPage = () => {
                     aliqua. Quis enim lobortis scelerisque fermentum. Neque
                     sodales ut etiam sit amet. Ligula ullamcorper
                     <strong className="text-primary dark:text-white">
-                      {" "}
-                      malesuada{" "}
+                      {' '}
+                      malesuada{' '}
                     </strong>
                     proin libero nunc consequat interdum varius. Quam
                     pellentesque nec nam aliquam sem et tortor consequat.
@@ -129,8 +129,8 @@ const BlogSidebarPage = () => {
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
                     Semper auctor neque vitae tempus quam pellentesque nec.
                     <span className="text-primary underline dark:text-white">
-                      {" "}
-                      Amet dictum sit amet justo{" "}
+                      {' '}
+                      Amet dictum sit amet justo{' '}
                     </span>
                     donec enim diam. Varius sit amet mattis vulputate enim nulla
                     aliquet porttitor. Odio pellentesque diam volutpat commodo
@@ -217,7 +217,7 @@ const BlogSidebarPage = () => {
                         </defs>
                       </svg>
                     </span>
-                    <span className="absolute right-0 bottom-0 z-[-1]">
+                    <span className="absolute bottom-0 right-0 z-[-1]">
                       <svg
                         width="53"
                         height="30"
@@ -234,7 +234,7 @@ const BlogSidebarPage = () => {
                         />
                         <mask
                           id="mask0_111:596"
-                          style={{ maskType: "alpha" }}
+                          style={{ maskType: 'alpha' }}
                           maskUnits="userSpaceOnUse"
                           x="0"
                           y="0"
@@ -335,12 +335,12 @@ const BlogSidebarPage = () => {
               </div>
             </div>
             <div className="w-full px-4 lg:w-4/12">
-              <div className="mt-12 mb-10 rounded-md bg-primary bg-opacity-5 p-6 dark:bg-opacity-5 lg:mt-0">
+              <div className="mb-10 mt-12 rounded-md bg-primary bg-opacity-5 p-6 dark:bg-opacity-5 lg:mt-0">
                 <form className="flex items-center justify-between">
                   <input
                     type="text"
                     placeholder="Search here..."
-                    className="palceholder-body-color mr-5 w-full rounded-md border border-transparent py-3 px-5 text-base font-medium text-body-color outline-none focus:border-primary dark:bg-white dark:bg-opacity-10"
+                    className="palceholder-body-color mr-5 w-full rounded-md border border-transparent px-5 py-3 text-base font-medium text-body-color outline-none focus:border-primary dark:bg-white dark:bg-opacity-10"
                   />
                   <button className="flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-md bg-primary text-white">
                     <svg
@@ -359,7 +359,7 @@ const BlogSidebarPage = () => {
                 </form>
               </div>
               <div className="mb-10 rounded-md bg-primary bg-opacity-5 dark:bg-opacity-10">
-                <h3 className="border-b border-body-color border-opacity-10 py-4 px-8 text-lg font-semibold text-black dark:border-white dark:border-opacity-10 dark:text-white">
+                <h3 className="border-b border-body-color border-opacity-10 px-8 py-4 text-lg font-semibold text-black dark:border-white dark:border-opacity-10 dark:text-white">
                   Related Posts
                 </h3>
                 <ul className="p-8">
@@ -390,10 +390,10 @@ const BlogSidebarPage = () => {
                 </ul>
               </div>
               <div className="mb-10 rounded-md bg-primary bg-opacity-5 dark:bg-opacity-10">
-                <h3 className="border-b border-body-color border-opacity-10 py-4 px-8 text-lg font-semibold text-black dark:border-white dark:border-opacity-10 dark:text-white">
+                <h3 className="border-b border-body-color border-opacity-10 px-8 py-4 text-lg font-semibold text-black dark:border-white dark:border-opacity-10 dark:text-white">
                   Popular Category
                 </h3>
-                <ul className="py-6 px-8">
+                <ul className="px-8 py-6">
                   <li>
                     <a
                       href="#0"
@@ -437,10 +437,10 @@ const BlogSidebarPage = () => {
                 </ul>
               </div>
               <div className="mb-10 rounded-md bg-primary bg-opacity-5 dark:bg-opacity-10">
-                <h3 className="border-b border-body-color border-opacity-10 py-4 px-8 text-lg font-semibold text-black dark:border-white dark:border-opacity-10 dark:text-white">
+                <h3 className="border-b border-body-color border-opacity-10 px-8 py-4 text-lg font-semibold text-black dark:border-white dark:border-opacity-10 dark:text-white">
                   Popular Tags
                 </h3>
-                <div className="flex flex-wrap py-6 px-8">
+                <div className="flex flex-wrap px-8 py-6">
                   <TagButton text="Themes" />
                   <TagButton text="UI Kit" />
                   <TagButton text="Tailwind" />

@@ -25,7 +25,7 @@ const AboutSectionTwo = () => {
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Cost-Effective
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed dark:text-white">
+                <p className="text-base font-medium leading-relaxed text-body-color dark:text-white sm:text-lg sm:leading-relaxed">
                   We strive to provide the most efficient solutions to meet our
                   clients’ needs while optimizing their return on investment.
                   With our focus on cost-effectiveness, you can expect to
@@ -36,7 +36,7 @@ const AboutSectionTwo = () => {
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Cutting-Edge Technologies
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed dark:text-white">
+                <p className="text-base font-medium leading-relaxed text-body-color dark:text-white sm:text-lg sm:leading-relaxed">
                   We stay up-to-date with the latest advancements in technology
                   to provide innovative solutions that meet our clients’ needs.
                   With our focus on cutting-edge technologies, we are always
@@ -47,7 +47,7 @@ const AboutSectionTwo = () => {
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Agile Methodologies
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed dark:text-white">
+                <p className="text-base font-medium leading-relaxed text-body-color dark:text-white sm:text-lg sm:leading-relaxed">
                   Iterative and incremental approach to software development.
                   Flexibility to adapt to changing requirements and priorities.
                   Emphasis on collaboration, communication, and continuous
