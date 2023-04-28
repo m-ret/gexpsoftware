@@ -1,23 +1,25 @@
+'use client';
+import { useState, useEffect } from 'react';
 import { Feature } from '@/types/feature';
 import { useTheme } from 'next-themes';
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { darkIcon, lightIcon, title, paragraph } = feature;
   const { theme } = useTheme();
+  const [iconName, setIconName] = useState('');
 
-  // Make sure darkIcon and lightIcon are valid strings
-  if (typeof darkIcon !== 'string' || typeof lightIcon !== 'string') {
-    return null;
-  }
-
-  const iconName = theme === 'dark' ? darkIcon : lightIcon;
-  const [name, extension] = iconName.split('.');
+  useEffect(() => {
+    const nameAndExtension = theme === 'dark' ? darkIcon : lightIcon;
+    const [name, extension] = nameAndExtension.split('.');
+    setIconName(`${name}.${extension}`);
+  }, [theme, darkIcon, lightIcon]);
 
   // Make sure iconName has at least one '.' separator
+  const [name, extension] = iconName.split('.');
   if (!name || !extension) {
     return null;
   }
-
+  
   return (
     <div className="flex flex-col items-center">
       <img src={`${name}.${extension}`} alt={name} />

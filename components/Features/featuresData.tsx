@@ -1,12 +1,11 @@
-
+'use client'
 import { Feature } from '@/types/feature';
-
 
 export const FeaturesData: Feature[] = [
   {
     id: 1,
-    lightIcon: '/images/service/7light.svg',
-    darkIcon: '/images/service/7dark.svg',
+    lightIcon: '/images/service/7-light.svg',
+    darkIcon: '/images/service/7-dark.svg',
     title: 'Outsourcing',
     paragraph:
       'Maximize your resources and minimize your risks with our outsourcing solutions. Our experienced team can handle your non-core functions efficiently and cost-effectively.',
