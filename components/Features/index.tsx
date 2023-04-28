@@ -1,3 +1,4 @@
+'use client'
 import SectionTitle from '../Common/SectionTitle';
 import SingleFeature from './SingleFeature';
 import featuresData from './featuresData';
@@ -20,6 +21,7 @@ const Features = () => {
             {featuresData.map(feature => (
               <SingleFeature key={feature.id} feature={feature} />
             ))}
+            
           </div>
         </div>
       </section>

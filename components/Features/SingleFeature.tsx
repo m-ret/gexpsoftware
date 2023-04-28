@@ -1,20 +1,28 @@
 import { Feature } from '@/types/feature';
+import { useTheme } from 'next-themes';
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
-  const { icon, title, paragraph } = feature;
+  const { darkIcon, lightIcon, title, paragraph } = feature;
+  const { theme } = useTheme();
+
+  // Make sure darkIcon and lightIcon are valid strings
+  if (typeof darkIcon !== 'string' || typeof lightIcon !== 'string') {
+    return null;
+  }
+
+  const iconName = theme === 'dark' ? darkIcon : lightIcon;
+  const [name, extension] = iconName.split('.');
+
+  // Make sure iconName has at least one '.' separator
+  if (!name || !extension) {
+    return null;
+  }
+
   return (
-    <div className="w-full">
-      <div className="wow fadeInUp" data-wow-delay=".15s">
-        <div className="mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
-          {icon}
-        </div>
-        <h3 className="mb-5 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-          {title}
-        </h3>
-        <p className="pr-[10px] text-base font-medium leading-relaxed text-body-color dark:text-white">
-          {paragraph}
-        </p>
-      </div>
+    <div className="flex flex-col items-center">
+      <img src={`${name}.${extension}`} alt={name} />
+      <h4 className="mt-6 mb-2 text-lg font-medium text-center">{title}</h4>
+      <p className="text-sm text-center">{paragraph}</p>
     </div>
   );
 };
