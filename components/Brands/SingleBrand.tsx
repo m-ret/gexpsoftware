@@ -9,7 +9,7 @@ const SingleBrand = ({ brand }: { brand: Brand }) => {
         href={href}
         target="_blank"
         rel="nofollow noreferrer"
-        className="relative h-10 w-full opacity-100 transition dark:hover:opacity-100"
+        className=" flex img-ticker -mx-4 relative h-10 w-full opacity-100 transition dark:hover:opacity-100"
       >
         <Image src={image} alt={name} fill />
       </a>
