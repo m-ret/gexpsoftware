@@ -31,3 +31,27 @@
     @apply opacity-100;
   }
 }
+
+@keyframes ticker-kf {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-108rem, 0, 0);
+  }
+}
+
+.img-ticker {
+  animation-name: ticker-kf;
+  animation-duration: 18s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.move-right {
+  transform: rotate(-20deg);
+}
+
+.move-left {
+  transform: rotate(20deg);
+}

@@ -1,3 +1,5 @@
+'use client'
+
 import SectionTitle from '../Common/SectionTitle';
 import SingleFeature from './SingleFeature';
 import featuresData from './featuresData';
@@ -15,7 +17,6 @@ const Features = () => {
             paragraph="As a solution-oriented company we offer a diverse range of expert solutions to help drive your business forward. Our experienced team is dedicated to understanding your unique needs and providing tailored services to help you achieve your goals. Explore our services and let's work together to unlock your full potential."
             center
           />
-
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(feature => (
               <SingleFeature key={feature.id} feature={feature} />

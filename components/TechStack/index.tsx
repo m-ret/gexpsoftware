@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import TechStackData from './constants';
 import SingleTechStack from './SingleTechStack';
@@ -19,7 +19,8 @@ const TechStacks = () => {
 
             <div
               className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:px-[50px] md:py-[60px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
-              data-wow-delay=".1s"
+              data-wow-delay=".1s
+              "
             >
               {TechStackData.map(techstack => (
                 <SingleTechStack key={techstack.id} techstack={techstack} />
