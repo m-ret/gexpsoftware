@@ -15,7 +15,7 @@ const Brands = () => {
               mb="80px"
             />
             <div
-              className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:px-[50px] md:py-[60px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
+              className="wow fadeInUp -mx-4 flex flex-wrap items-center justify-center overflow-hidden rounded-md bg-dark px-8 py-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:px-[50px] md:py-[60px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
               data-wow-delay=".1s
               "
             >
