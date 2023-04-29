@@ -1,7 +1,9 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import { Feature } from '@/types/feature';
 import { useTheme } from 'next-themes';
+import { THEME } from '@/types/theme';
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { darkIcon, lightIcon, title, paragraph } = feature;
@@ -9,8 +11,8 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
   const [iconName, setIconName] = useState('');
 
   useEffect(() => {
-    const nameAndExtension = theme === 'dark' ? darkIcon : lightIcon;
-    const [name, extension] = nameAndExtension.split('.');
+    const THEME = theme === 'dark' ? darkIcon : lightIcon;
+    const [name, extension] = THEME.split('.');
     setIconName(`${name}.${extension}`);
   }, [theme, darkIcon, lightIcon]);
 
