@@ -11,13 +11,14 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
   const [iconName, setIconName] = useState('');
 
   useEffect(() => {
-    const THEME = theme === 'dark' ? darkIcon : lightIcon;
-    const [name, extension] = THEME.split('.');
+    const whichIcon = theme === THEME.DARK ? darkIcon : lightIcon;
+    const [name, extension] = whichIcon.split('.');
     setIconName(`${name}.${extension}`);
   }, [theme, darkIcon, lightIcon]);
 
   // Make sure iconName has at least one '.' separator
   const [name, extension] = iconName.split('.');
+
   if (!name || !extension) {
     return null;
   }
