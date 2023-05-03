@@ -1,8 +1,8 @@
 'use client';
 
-import NewsLatterBox from './NewsLatterBox';
 import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import NewsLatterBox from './NewsLatterBox';
 
 const Contact = () => {
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
@@ -23,7 +23,6 @@ const Contact = () => {
 
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef, USER_ID)
-
       .then(
         result => {
           console.log(result.text);
