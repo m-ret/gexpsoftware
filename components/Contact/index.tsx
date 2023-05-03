@@ -1,42 +1,57 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState  } from 'react';
 import emailjs from 'emailjs-com';
+import toast, { Toaster } from 'react-hot-toast';
 import NewsLatterBox from './NewsLatterBox';
 
 const Contact = () => {
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
-
   const form = useRef<HTMLFormElement>(null);
-  const [showAlert, setShowAlert] = useState(false);
+  const [emailError, setEmailError] = useState<string>('');
 
-  const sendEmail = e => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { current: formRef } = form;
-
     if (!formRef) {
       console.log('Form is not defined.');
       return;
     }
+    const email = formRef.email.value.trim();
+    const emailValidate = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailValidate.test(email)) {
+      setEmailError('Please enter a valid email address.');
+      return;
+    }
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef, USER_ID)
-      .then(
-        result => {
-          console.log(result.text);
-          clearForm();
-          setShowAlert(true);
-        },
-        error => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef, USER_ID).then(
+      result => {
+        clearForm();
+        toast.success('Message sent successfully!', {
+          duration: 5000,
+          position: 'bottom-center',
+          style: {
+            background: '#3B82F6',
+            color: '#FFFFFF'
+          }
+        });
+      },
+      (error) => {
+        toast.error('Message could not be sent. Please try again later.', {
+          duration: 5000,
+          position: 'bottom-center',
+          style: {
+            background: '#EF4444',
+            color: '#FFFFFF'
+          }
+        });
+      }
+    );
   };
   const clearForm = () => {
     const { current: formRef } = form;
-
     if (!formRef) {
       console.log('Form is not defined.');
       return;
@@ -45,14 +60,6 @@ const Contact = () => {
       ? formRef.reset()
       : console.log('Reset function is not defined.');
   };
-
-  useEffect(() => {
-    let timeout;
-    if (showAlert) {
-      timeout = setTimeout(() => setShowAlert(false), 5000);
-    }
-    return () => clearTimeout(timeout);
-  }, [showAlert]);
 
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
@@ -72,6 +79,9 @@ const Contact = () => {
                 solutions.
               </p>
               <form ref={form} onSubmit={sendEmail}>
+                <div>
+                  <Toaster />
+                </div>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
@@ -104,6 +114,8 @@ const Contact = () => {
                         className="w-full rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       />
                     </div>
+                      <span style={{ color: 'red' }}>{emailError}</span>
+                      <br />
                   </div>
                   <div className="w-full px-4">
                     <div className="mb-8">
@@ -128,11 +140,6 @@ const Contact = () => {
                   </div>
                 </div>
               </form>
-              {showAlert && (
-                <div className="bg-green py-2 text-center text-white mt-2">
-                  Message Sent Successfully
-                </div>
-              )}
             </div>
           </div>
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
