@@ -5,6 +5,10 @@ import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
+  const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+  const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = e => {
@@ -17,12 +21,8 @@ const Contact = () => {
     }
 
     emailjs
-      .sendForm(
-        'service_q2yyuvc',
-        'template_ck5shih',
-        formRef,
-        'M6Cdv9mT9s7MHOoPM'
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef, USER_ID)
+
       .then(
         result => {
           console.log(result.text);
@@ -42,7 +42,6 @@ const Contact = () => {
       console.log('Form is not defined.');
       return;
     }
-
     formRef.reset
       ? formRef.reset()
       : console.log('Reset function is not defined.');
