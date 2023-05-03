@@ -1,7 +1,7 @@
 'use client';
 
 import NewsLatterBox from './NewsLatterBox';
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
@@ -10,6 +10,7 @@ const Contact = () => {
   const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
   const form = useRef<HTMLFormElement>(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   const sendEmail = e => {
     e.preventDefault();
@@ -27,14 +28,13 @@ const Contact = () => {
         result => {
           console.log(result.text);
           clearForm();
-          alert('Mensaje enviado correctamente');
+          setShowAlert(true);
         },
         error => {
           console.log(error.text);
         }
       );
   };
-
   const clearForm = () => {
     const { current: formRef } = form;
 
@@ -46,6 +46,14 @@ const Contact = () => {
       ? formRef.reset()
       : console.log('Reset function is not defined.');
   };
+
+  useEffect(() => {
+    let timeout;
+    if (showAlert) {
+      timeout = setTimeout(() => setShowAlert(false), 5000);
+    }
+    return () => clearTimeout(timeout);
+  }, [showAlert]);
 
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
@@ -121,6 +129,11 @@ const Contact = () => {
                   </div>
                 </div>
               </form>
+              {showAlert && (
+                <div className="bg-green py-2 text-center text-white mt-2">
+                  Message Sent Successfully
+                </div>
+              )}
             </div>
           </div>
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">

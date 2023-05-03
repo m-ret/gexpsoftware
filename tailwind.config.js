@@ -22,6 +22,7 @@ module.exports = {
       wheat: '#F9F7F3',
       primary: '#4A6CF7',
       yellow: '#FBB040',
+      green: '#28a745',
       'body-color': '#959CB1'
     },
     screens: {
