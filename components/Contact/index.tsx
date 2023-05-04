@@ -1,64 +1,66 @@
 'use client';
 
-import React, { useRef, useState  } from 'react';
+import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
-import toast, { Toaster } from 'react-hot-toast';
+
+import { ENV_VARS } from '@/utils/config';
+import { showToast } from '@/utils/toast';
 import NewsLatterBox from './NewsLatterBox';
 
 const Contact = () => {
-  const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-  const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+  const { USER_ID, SERVICE_ID, TEMPLATE_ID } = ENV_VARS;
   const form = useRef<HTMLFormElement>(null);
-  const [emailError, setEmailError] = useState<string>('');
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { current: formRef } = form;
+  const sendEmail = async (
+    event: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    event.preventDefault();
+    const formRef = form.current;
+    const successMessage = 'Message sent successfully!';
+
     if (!formRef) {
-      console.log('Form is not defined.');
-      return;
-    }
-    const email = formRef.email.value.trim();
-    const emailValidate = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailValidate.test(email)) {
-      setEmailError('Please enter a valid email address.');
+      console.error('Form is not defined.');
       return;
     }
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef, USER_ID).then(
-      result => {
-        clearForm();
-        toast.success('Message sent successfully!', {
-          duration: 5000,
-          position: 'bottom-center',
-          style: {
-            background: '#3B82F6',
-            color: '#FFFFFF'
-          }
-        });
-      },
-      (error) => {
-        toast.error('Message could not be sent. Please try again later.', {
-          duration: 5000,
-          position: 'bottom-center',
-          style: {
-            background: '#EF4444',
-            color: '#FFFFFF'
-          }
-        });
+    const sendEmailPromise = new Promise(async (resolve, reject) => {
+      try {
+        await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef, USER_ID);
+        resolve(successMessage);
+      } catch (error) {
+        reject(error);
       }
-    );
+    });
+
+    showToast({
+      type: 'custom',
+      promise: sendEmailPromise,
+      promiseMessages: {
+        success: successMessage,
+        loading: 'Sending message...',
+        error: 'Something went wrong.'
+      }
+    });
+
+    try {
+      await sendEmailPromise;
+      clearForm();
+    } catch (error) {
+      console.error(error);
+    }
   };
+
   const clearForm = () => {
     const { current: formRef } = form;
+
     if (!formRef) {
-      console.log('Form is not defined.');
+      console.error('Form is not defined.');
       return;
     }
+
     formRef.reset
       ? formRef.reset()
-      : console.log('Reset function is not defined.');
+      : console.error('Reset function is not defined.');
   };
 
   return (
@@ -79,9 +81,6 @@ const Contact = () => {
                 solutions.
               </p>
               <form ref={form} onSubmit={sendEmail}>
-                <div>
-                  <Toaster />
-                </div>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
@@ -92,6 +91,7 @@ const Contact = () => {
                         Your Name
                       </label>
                       <input
+                        required
                         type="text"
                         name="user"
                         placeholder="Enter your name"
@@ -108,14 +108,14 @@ const Contact = () => {
                         Your Email
                       </label>
                       <input
+                        required
                         type="email"
                         name="email"
                         placeholder="Enter your email"
                         className="w-full rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       />
                     </div>
-                      <span style={{ color: 'red' }}>{emailError}</span>
-                      <br />
+                    <br />
                   </div>
                   <div className="w-full px-4">
                     <div className="mb-8">
@@ -126,8 +126,9 @@ const Contact = () => {
                         Your Message
                       </label>
                       <textarea
-                        name="message"
+                        required
                         rows={5}
+                        name="message"
                         placeholder="Enter your Message"
                         className="w-full resize-none rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       ></textarea>

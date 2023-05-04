@@ -17,10 +17,10 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <Features />
-      <TechStacks />
-      <Brands />
       <AboutSectionOne />
+      <TechStacks />
       <AboutSectionTwo />
+      <Brands />
       {/*<Blog /> */}
       <Contact />
     </>

@@ -20,11 +20,11 @@ const AboutSectionOne = () => {
   return (
     <section id="about" className="pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
+        <div className="pb-16 md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="At Gexp Software, we are passionate about helping our clients succeed."
+                title="Why Gexp Software?"
                 paragraph="We take pride in our work and are committed to delivering exceptional service and expertise to our clients. If you're looking for a trusted partner to help you with your software development and staffing needs, look no further than Gexp Software."
                 mb="44px"
               />
@@ -36,7 +36,7 @@ const AboutSectionOne = () => {
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
                     <List text="Exceptional Quality" />
-                    <List text="Cutting-Edge Technologies" />
+                    <List text="Cost-Effective" />
                     <List text="Scalability" />
                   </div>
 

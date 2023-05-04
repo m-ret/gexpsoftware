@@ -8,7 +8,6 @@ const ContactPage = () => {
         pageName="Talk To Us"
         description="Please don’t hesitate to reach out to us if you have any questions or concerns. We are here to assist and help find solutions."
       />
-
       <Contact />
     </>
   );

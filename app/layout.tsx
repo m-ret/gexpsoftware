@@ -1,7 +1,9 @@
 'use client';
 
+import { Providers } from './providers';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { Toaster } from 'react-hot-toast';
 import ScrollToTop from '@/components/ScrollToTop';
 import 'node_modules/react-modal-video/css/modal-video.css';
 import '../styles/index.css';
@@ -18,7 +20,7 @@ export default function RootLayout({
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-
+      <Toaster />
       <body className="dark:bg-black">
         <Providers>
           <Header />
@@ -30,5 +32,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import { Providers } from './providers';
