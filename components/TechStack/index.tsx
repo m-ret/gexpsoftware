@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import TechStackData from './constants';
 import SingleTechStack from './SingleTechStack';
