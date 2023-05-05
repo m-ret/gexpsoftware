@@ -28,7 +28,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
     <div className="flex flex-col items-center">
       <Image src={`${name}.${extension}`} alt={name} width={75} height={75} />
       <h4 className="mt-6 mb-2 text-lg font-medium text-center">{title}</h4>
-      <p className="text-sm text-center">{paragraph}</p>
+      <p className="text-base text-center">{paragraph}</p>
     </div>
   );
 };

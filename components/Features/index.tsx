@@ -1,8 +1,8 @@
 'use client';
 
-import SectionTitle from '../Common/SectionTitle';
-import SingleFeature from './SingleFeature';
 import featuresData from './featuresData';
+import SingleFeature from './SingleFeature';
+import SectionTitle from '../Common/SectionTitle';
 
 const Features = () => {
   return (

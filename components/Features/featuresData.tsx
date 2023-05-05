@@ -1,7 +1,7 @@
 'use client';
 import { Feature } from '@/types/feature';
 
-export const eaturesData: Feature[] = [
+export const featuresData: Feature[] = [
   {
     id: 1,
     lightIcon: '/images/service/7-light.svg',
@@ -44,4 +44,4 @@ export const eaturesData: Feature[] = [
   }
 ];
 
-export default eaturesData;
+export default featuresData;
