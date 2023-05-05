@@ -1,15 +1,16 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { Toaster } from 'react-hot-toast';
+import 'node_modules/react-modal-video/css/modal-video.css';
+
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import { Toaster } from 'react-hot-toast';
 import ScrollToTop from '@/components/ScrollToTop';
-import 'node_modules/react-modal-video/css/modal-video.css';
-import '../styles/index.css';
+import '@/styles/index.css';
 
 const DynamicContextProvider = dynamic(
-  () => import('./providers').then(({ Providers }) => Providers),
+  () => import('@/app/providers').then(({ Providers }) => Providers),
   { ssr: false }
 );
 
