@@ -1,13 +1,23 @@
 import { Blog } from '@/types/blog';
 import { useState, useEffect } from 'react';
-import { GetServerSideProps  } from 'next'
+import { GetServerSideProps } from 'next';
+import SingleBlog from './SingleBlog';
 
 type Props = {
   blogs: Blog[];
 };
 
-const blogData= () => {
-  const [postList, setPostList] = useState<Blog[]>([]);
+const BlogList = ({ blogs }: { blogs: Blog[] }) => (
+  <div className="-mx-4 flex flex-wrap justify-center">
+    {blogs.map((blog) => (
+      <div key={blog.id} className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3">
+        <SingleBlog blog={blog} />
+      </div>
+    ))}
+  </div>
+);
+
+const BlogData = ({ blogs }: Props) => {
   const [blogData, setBlogData] = useState<Blog[]>([]);
 
   useEffect(() => {
@@ -29,16 +39,14 @@ const blogData= () => {
         }
       });
       
-      setPostList(blogPublic.data);
       setBlogData(blogDataArray);
     };
   
     fetchData();
   }, []);
 
-  console.log(blogData);
+  return <BlogList blogs={blogData} />;
 };
-
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const res = await fetch(`http://localhost:1337/api/blogs?populate=imagen`);
@@ -46,8 +54,9 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
    
   return {
     props: {
-      blogs: postList
+      blogs: postList.data
     },
   };
 };
-export default blogData;
+
+export default BlogData;

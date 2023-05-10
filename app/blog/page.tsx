@@ -1,8 +1,44 @@
+'use client';
 import SingleBlog from '@/components/Blog/SingleBlog';
-import blogData from '@/components/Blog/blogData';
+import { useState, useEffect } from 'react';
 import Breadcrumb from '@/components/Common/Breadcrumb';
+import { Blog } from '@/types/blog';
 
 const Blog = () => {
+  const [blogData, setBlogData] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `http://localhost:1337/api/blogs?populate=imagen`
+        );
+        const data = await res.json();
+        if (data?.data) {
+          const blogDataArray = data.data.map((blog: any) => {
+            const imagen =
+              blog.attributes?.imagen?.data?.attributes?.formats?.medium?.url;
+            return {
+              id: blog.id,
+              title: blog.attributes?.title ?? '',
+              imagen,
+              paragraph: blog.attributes?.paragraph ?? '',
+              author: blog.attributes?.author ?? '',
+              tags: blog.attributes?.tags ?? [],
+              publishDate: blog.attributes?.publishDate ?? '',
+              url: blog.attributes?.url ?? ''
+            };
+          });
+          setBlogData(blogDataArray);
+        } else {
+          console.error('Data from API is not in expected format:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching data from API:', error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <Breadcrumb
@@ -12,7 +48,7 @@ const Blog = () => {
 
       <section className="pb-[120px] pt-[120px]">
         <div className="container">
-          <div className="-mx-4 flex flex-wrap justify-center">
+          <div className="-mx-4 flex flex-wrap justify-center m-2">
             {blogData.map(blog => (
               <div
                 key={blog.id}
