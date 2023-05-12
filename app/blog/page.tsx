@@ -13,7 +13,7 @@ const Blog = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `http://localhost:1337/api/blogs?populate=imagen`
+          `${process.env.NEXT_PUBLIC_API_URL}/blogs?populate=imagen`
         );
         if (res.ok) {
           const data = await res.json();
