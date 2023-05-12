@@ -40,7 +40,7 @@ const BlogPage = ({ blogs }: Props) => {
         console.error('Error fetching data from API:', error);
       }
     };
-    fetchData();
+    fetchData();    
   }, []);
 
   return (
