@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
   const { title, image, paragraph, author, tags, publishDate, imagen, url } = blog;
+  
   return (
     <>
       <div
