@@ -204,7 +204,7 @@ const Footer = () => {
             <p className="text-center text-base text-body-color dark:text-white">
               ©{new Date().getFullYear()}{' '}
               <a href="/" rel="nofollow noopener">
-                Gexp Software
+                Gexp Software | Costa Rica
               </a>
             </p>
           </div>
