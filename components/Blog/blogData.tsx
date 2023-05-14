@@ -1,47 +1,73 @@
+import { useState, useEffect } from 'react';
+import { GetServerSideProps } from 'next';
 import { Blog } from '@/types/blog';
 
-const blogData: Blog[] = [
-  {
-    id: 1,
-    title: 'Best UI components for modern websites',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.',
-    image: '/images/blog/blog-01.jpg',
-    author: {
-      name: 'Samuyl Joshi',
-      image: '/images/blog/author-01.png',
-      designation: 'Graphic Designer'
+type Props = {
+  blogs: Blog[];
+};
+
+const BlogPage = ({ blogs }: Props) => {
+  const [blogData, setBlogData] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `http://localhost:1337/api/blogs?populate=imagen`
+        );
+        const data = await res.json();
+        if (data?.data) {
+          const blogDataArray = data.data.map((blog: any) => {
+            const imagen =
+              blog.attributes?.imagen?.data?.attributes?.formats?.medium?.url;
+            return {
+              id: blog.id,
+              title: blog.attributes?.title ?? '',
+              imagen,
+              paragraph: blog.attributes?.paragraph ?? '',
+              author: blog.attributes?.author ?? '',
+              tags: blog.attributes?.tags ?? [],
+              publishDate: blog.attributes?.publishDate ?? '',
+              url: blog.attributes?.url ?? ''
+            };
+          });
+          setBlogData(blogDataArray);
+          
+        } else {
+          console.error('Data from API is not in expected format:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching data from API:', error);
+      }
+    };
+    fetchData();    
+  }, []);
+
+  return (
+    <div>
+      {blogData.map((blog: Blog) => (
+        <div key={blog.id}>
+          <h1>{blog.title}</h1>
+          <img src={blog.imagen} alt="blog image" />
+          <p>{blog.paragraph}</p>
+          <p>{blog.author}</p>
+          <p>{blog.publishDate}</p>
+          <p>{blog.url}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const res = await fetch(`http://localhost:1337/api/blogs?populate=imagen`);
+  const postList = await res.json();
+
+  return {
+    props: {
+      blogs: postList
     },
-    tags: ['creative'],
-    publishDate: '2025'
-  },
-  {
-    id: 2,
-    title: '9 simple ways to improve your design skills',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.',
-    image: '/images/blog/blog-02.jpg',
-    author: {
-      name: 'Musharof Chy',
-      image: '/images/blog/author-02.png',
-      designation: 'Content Writer'
-    },
-    tags: ['computer'],
-    publishDate: '2025'
-  },
-  {
-    id: 3,
-    title: 'Tips to quickly improve your coding speed.',
-    paragraph:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.',
-    image: '/images/blog/blog-03.jpg',
-    author: {
-      name: 'Lethium Deo',
-      image: '/images/blog/author-03.png',
-      designation: 'Graphic Designer'
-    },
-    tags: ['design'],
-    publishDate: '2025'
-  }
-];
-export default blogData;
+  };
+};
+
+export default BlogPage;
