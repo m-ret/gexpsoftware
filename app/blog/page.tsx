@@ -1,28 +1,71 @@
-import SingleBlog from '@/components/Blog/SingleBlog';
-import blogData from '@/components/Blog/blogData';
+'use client';
+
+import { useState, useEffect } from 'react';
+import { Blog } from '@/types/blog';
 import Breadcrumb from '@/components/Common/Breadcrumb';
+import SingleBlog from '@/components/Blog/SingleBlog';
+import { truncateText } from '@/components/Blog/ShortenText';
 
 const Blog = () => {
+  const [blogData, setBlogData] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/blogs?populate=imagen`
+        );
+        if (res.ok) {
+          const data = await res.json();
+          if (data?.data) {
+            const blogDataArray = data.data.map((blog: any) => {
+              const imagen =
+                blog.attributes?.imagen?.data?.attributes?.formats?.medium?.url ||
+                '';
+              return {
+                id: blog.id,
+                title: blog.attributes?.title ?? '',
+                imagen,
+                paragraph: blog.attributes?.paragraph ?? '',
+                author: blog.attributes?.author ?? '',
+                tags: blog.attributes?.tags ?? [],
+                publishDate: blog.attributes?.publishDate ?? '',
+                url: blog.attributes?.url ?? ''
+              };
+            });
+            setBlogData(blogDataArray);
+          } else {
+            console.error('Data from API is not in expected format:', data);
+          }
+        } else {
+          throw new Error(`HTTP error ${res.status}`);
+        }
+      } catch (error) {
+        console.error('Error fetching data from API:', error);
+        // TODO: Mostrar un mensaje de error al usuario
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <Breadcrumb
         pageName="Blog Grid"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
       />
-
       <section className="pb-[120px] pt-[120px]">
         <div className="container">
-          <div className="-mx-4 flex flex-wrap justify-center">
-            {blogData.map(blog => (
-              <div
-                key={blog.id}
-                className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
-              >
-                <SingleBlog blog={blog} />
-              </div>
-            ))}
-          </div>
-
+        <div className="flex flex-wrap justify-center my-2">
+          {blogData.length >= 3 && blogData.slice(-3).map(blog => (
+            <div
+              key={blog.id}
+              className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3 my-2"
+            >
+              <SingleBlog blog={{ ...blog, paragraph: truncateText(blog.paragraph, 150) }} />
+            </div>
+          ))}
+        </div>
           <div
             className="wow fadeInUp -mx-4 flex flex-wrap"
             data-wow-delay=".15s"
@@ -90,5 +133,6 @@ const Blog = () => {
     </>
   );
 };
+
 
 export default Blog;
