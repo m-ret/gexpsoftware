@@ -2,7 +2,7 @@ const SharePost = () => {
   return (
     <>
       <a
-        href="#0"
+        href="https://www.linkedin.com/company/gexp-software/"
         className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary bg-opacity-10 text-body-color duration-300 hover:bg-opacity-100 hover:text-white sm:ml-3"
       >
         <svg
@@ -15,7 +15,7 @@ const SharePost = () => {
         </svg>
       </a>
       <a
-        href="#0"
+        href="https://twitter.com/GEXPSoftware"
         className="mb-3 ml-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary bg-opacity-10 text-body-color duration-300 hover:bg-opacity-100 hover:text-white"
       >
         <svg
@@ -28,7 +28,7 @@ const SharePost = () => {
         </svg>
       </a>
       <a
-        href="#0"
+        href="https://www.facebook.com/people/GEXP-Software/100084373377998/"
         className="mb-3 ml-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary bg-opacity-10 text-body-color duration-300 hover:bg-opacity-100 hover:text-white"
       >
         <svg width="9" height="18" viewBox="0 0 9 18" className="fill-current">

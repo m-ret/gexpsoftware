@@ -14,4 +14,5 @@ export type Blog = {
   tags: string[];
   publishDate: string;
   url: string;
+  onClick: (event: MouseEvent) => Promise<void>;
 };

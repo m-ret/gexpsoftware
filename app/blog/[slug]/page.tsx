@@ -1,25 +1,26 @@
-import { Blog } from "@/types/blog";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from 'react';
-import { useRouter } from "next/navigation";
+'use client';
 
-
+import Image from 'next/image';
+import Link from 'next/link';
+import { Blog } from '@/types/blog';
+import { useRouter } from 'next/navigation';
 
 interface SingleBlogProps {
   blog: Blog;
   onClick: () => Promise<void>;
 }
 
-const SingleBlog = ({ blog, onClick }: SingleBlogProps) => {
-  const [page, setPage] = useState('');
+const RepoPost = ({ blog, onClick }: SingleBlogProps) => {
   const router = useRouter();
+  const { title, imagen, paragraph, author, tags, publishDate, url } = blog;
 
-  const { title, image, paragraph, author, tags, publishDate, url } = blog;
+  if (!blog) {
+    return null; // Otra opción es mostrar un mensaje de error
+  }
 
   const handleClick = async () => {
     await onClick();
-    router.push(`/related/${blog.id}`);
+    router.push(`/blog-details/${blog.url}`);
   };
 
   return (
@@ -28,25 +29,30 @@ const SingleBlog = ({ blog, onClick }: SingleBlogProps) => {
         className="wow fadeInUp relative overflow-hidden rounded-md bg-white shadow-one dark:bg-dark"
         data-wow-delay=".1s"
       >
-        <Link href={`/blog/${page}`} passHref className="relative block h-[220px] w-full">
-          <span className="absolute top-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-primary py-2 px-4 text-sm font-semibold capitalize text-white">
+        <Link href={`/`} passHref className="relative block h-[220px] w-full">
+          <span className="absolute right-6 top-6 z-20 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold capitalize text-white">
             {tags}
           </span>
-          <Image src={image} alt="Imagen Blog" fill 
-     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px" priority={true} />
+          <Image
+            src={imagen}
+            alt="Imagen Blog"
+            fill
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
+            priority={true}
+          />
         </Link>
-        <div className="p-6 sm:p-8 md:py-8 md:px-6 lg:p-8 xl:py-8 xl:px-5 2xl:p-8">
+        <div className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8">
           <h3>
             <Link
-             href={`/blog/${blog.id}`} passHref
+              href={`/blog-details/${blog.url}`}
+              passHref
               className="mb-4 block text-xl font-bold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl"
               onClick={handleClick}
-              >
-                {title}
+            >
+              {title}
             </Link>
           </h3>
-          
-          <p className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10 paragraph overflow-hidden line-clamp-4">
+          <p className="paragraph mb-6 line-clamp-4 overflow-hidden border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10">
             {paragraph}
           </p>
           <div className="flex items-center">
@@ -71,4 +77,4 @@ const SingleBlog = ({ blog, onClick }: SingleBlogProps) => {
   );
 };
 
-export default SingleBlog;
+export default RepoPost;
