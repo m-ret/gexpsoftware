@@ -29,13 +29,13 @@ const RepoPost = ({ blog, onClick }: SingleBlogProps) => {
         className="wow fadeInUp relative overflow-hidden rounded-md bg-white shadow-one dark:bg-dark"
         data-wow-delay=".1s"
       >
-        <Link href={`/`} passHref className="relative block h-[220px] w-full">
+        <Link href={`/blog-details/${blog.url}`} passHref className="relative block h-[220px] w-full">
           <span className="absolute right-6 top-6 z-20 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold capitalize text-white">
             {tags}
           </span>
           <Image
             src={imagen}
-            alt="Imagen Blog"
+            alt="Image Blog"
             fill
             sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
             priority={true}
@@ -46,7 +46,7 @@ const RepoPost = ({ blog, onClick }: SingleBlogProps) => {
             <Link
               href={`/blog-details/${blog.url}`}
               passHref
-              className="mb-4 block text-xl font-bold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl"
+              className="mb-4 block truncate text-xl font-bold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl"
               onClick={handleClick}
             >
               {title}
