@@ -1,5 +1,3 @@
-
-
 import SectionTitle from "../Common/SectionTitle";
 
 const Blog = ({ blog }: { blog: any[];}) => {

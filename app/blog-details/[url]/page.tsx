@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 import SharePost from '@/components/Blog/SharePost';
 import TagButton from '@/components/Blog/TagButton';
 import { showToast } from '@/utils/toast';
@@ -15,7 +16,7 @@ function BlogDetail({ params }) {
       setLoading(true);
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/blogs?filters[url]=${params.url}&populate=imagen`
+          `${process.env.NEXT_PUBLIC_API_URL}/blogs?filters[url]=${params.url}&populate=asset`
         );
 
         if (!res.ok) {
@@ -27,13 +28,16 @@ function BlogDetail({ params }) {
 
         if (page && data?.data) {
           const blogDataArray = data.data.map(blog => {
-            const { imagen, url: urlViewBlog } = blog.attributes;
+            const { asset, url: urlViewBlog } = blog.attributes;
 
             return {
               id: blog.id,
               title: blog.attributes?.title ?? '',
-              imagen: imagen?.data?.attributes?.formats?.medium?.url || '',
+              asset: asset?.data?.attributes?.formats?.medium?.url || '',
               paragraph: blog.attributes?.paragraph ?? '',
+              richtext: blog.attributes.richtext ?? '',
+              code: blog.attributes.code ?? '',
+              highlights: blog.attributes.highlights ?? '',
               author: blog.attributes?.author ?? '',
               tags: blog.attributes?.tags ?? [],
               publishDate: blog.attributes?.publishDate ?? '',
@@ -125,14 +129,14 @@ function BlogDetail({ params }) {
                       </div>
                     </div>
                     <div>
-                      <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                        {blogItem?.title}
+                      <p className="mb-10 text-center text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+                        {blogItem?.highlights}
                       </p>
                       <div className="mb-10 w-full overflow-hidden rounded">
                         <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                          {blogItem?.imagen && (
+                          {blogItem?.asset && (
                             <Image
-                              src={blogItem?.imagen}
+                              src={blogItem?.asset}
                               alt="Image Blog"
                               fill
                               sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -152,16 +156,12 @@ function BlogDetail({ params }) {
                       </div>
                       <p className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
                         <strong className="text-primary dark:text-white">
-                          malesuada
+                          {blogItem.code}
                         </strong>
                       </p>
                       <div className="relative z-10 mb-10 overflow-hidden rounded-md bg-primary bg-opacity-10 p-8 md:p-9 lg:p-8 xl:p-9">
-                        <p className="text-center text-base font-medium italic text-body-color">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod incididunt utionals labore et
-                          dolore magna aliqua. Quis lobortis scelerisque
-                          fermentum, The Neque ut etiam sit amet.
-                        </p>
+                        <p className="text-center text-base font-medium italic text-body-color"></p>
+                        <ReactMarkdown>{blogItem?.richtext}</ReactMarkdown>
                         <span className="absolute left-0 top-0 z-[-1]">
                           <svg
                             width="132"
@@ -314,8 +314,6 @@ function BlogDetail({ params }) {
                             Popular:
                           </h5>
                           <div className="flex items-center">
-                            <TagButton text={blogItem?.tags} />
-                            <TagButton text={blogItem?.tags} />
                             <TagButton text={blogItem?.tags} />
                           </div>
                         </div>

@@ -8,11 +8,12 @@ import { useRouter } from 'next/navigation';
 interface SingleBlogProps {
   blog: Blog;
   onClick: () => Promise<void>;
+  lastThreeTags: string[]; // Agrega la nueva prop lastThreeTags
 }
 
-const RepoPost = ({ blog, onClick }: SingleBlogProps) => {
+const RepoPost = ({ blog, onClick, lastThreeTags  }: SingleBlogProps) => {
   const router = useRouter();
-  const { title, imagen, paragraph, author, tags, publishDate, url } = blog;
+  const { title, asset, paragraph, author, tags, publishDate, url } = blog;
 
   if (!blog) {
     return null; // Otra opción es mostrar un mensaje de error
@@ -22,7 +23,7 @@ const RepoPost = ({ blog, onClick }: SingleBlogProps) => {
     await onClick();
     router.push(`/blog-details/${blog.url}`);
   };
-
+  
   return (
     <>
       <div
@@ -34,7 +35,7 @@ const RepoPost = ({ blog, onClick }: SingleBlogProps) => {
             {tags}
           </span>
           <Image
-            src={imagen}
+            src={asset}
             alt="Image Blog"
             fill
             sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px"
