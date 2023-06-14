@@ -52,5 +52,12 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [ {
+    "name": "preset-default",
+    "params": {
+      "overrides": {
+        "removeTitle": false
+      }
+    }
+  }]
 };

@@ -3,9 +3,9 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import Breadcrumb from '@/components/Common/Breadcrumb';
-import { showToast } from '@/utils/toast'
+import { showToast } from '@/utils/toast';
 import RepoPost from './[slug]/page';
-;
+import { Loading } from '@/utils/loading';
 
 const Blog = () => {
   const limit = 6;
@@ -53,15 +53,19 @@ const Blog = () => {
         setBlogData(blogs);
         setTotalPages(Math.ceil(meta.pagination.total / limit));
       } else {
+        console.error('Invalid data format:', {
+          id: 'dataError'
+        });
         showToast({
           type: 'error',
           message: 'Invalid data format'
         });
       }
     } catch (error) {
+      console.error('An error occurred while fetching data. Error:', error);
       showToast({
         type: 'error',
-        message: 'An error occurred while fetching data...'
+        message: 'An error occurred while fetching data'
       });
     } finally {
       setLoading(false);
@@ -112,15 +116,17 @@ const Blog = () => {
           setBlogData([newBlogData]);
         }
       } else {
+        console.error(`HTTP error ${res.status}`);
         showToast({
           type: 'error',
           message: `HTTP error ${res.status}`
         });
       }
     } catch (error) {
+      console.error('An error occurred while fetching data. Error:', error);
       showToast({
         type: 'error',
-        message: 'An error occurred while fetching data...'
+        message: 'An error occurred while fetching data'
       });
     }
   };
@@ -208,13 +214,5 @@ const Blog = () => {
     </>
   );
 };
-
-function Loading() {
-  return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="border-gray-900 h-16 w-16 animate-spin rounded-full border-b-2 border-t-2"></div>
-    </div>
-  );
-}
 
 export default Blog;

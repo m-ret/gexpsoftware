@@ -3,9 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
-
-
-
 interface SingleBlogProps {
   blog: Blog;
   onClick: () => Promise<void>;
@@ -15,7 +12,7 @@ const SingleBlog = ({ blog, onClick }: SingleBlogProps) => {
   const [page, setPage] = useState('');
   const router = useRouter();
 
-  const { title, image, paragraph, author, tags, publishDate, url } = blog;
+  const { title, asset, paragraph, author, tags, publishDate, url } = blog;
 
   const handleClick = async () => {
     await onClick();
@@ -32,7 +29,7 @@ const SingleBlog = ({ blog, onClick }: SingleBlogProps) => {
           <span className="absolute top-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-primary py-2 px-4 text-sm font-semibold capitalize text-white">
             {tags}
           </span>
-          <Image src={image} alt="Imagen Blog" fill 
+          <Image src={asset} alt="Imagen Blog" fill 
      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px" priority={true} />
         </Link>
         <div className="p-6 sm:p-8 md:py-8 md:px-6 lg:p-8 xl:py-8 xl:px-5 2xl:p-8">
