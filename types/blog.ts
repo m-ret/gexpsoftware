@@ -8,8 +8,13 @@ export type Blog = {
   id: number;
   title: string;
   paragraph: string;
-  image: string;
-  author: Author;
+  asset: string;
+  code: string;
+  highlights: string;
+  richtext: string;
+  author: string;
   tags: string[];
   publishDate: string;
+  url: string;
+  onClick: (event: MouseEvent) => Promise<void>;
 };

@@ -85,7 +85,7 @@ const Contact = () => {
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
                       <label
-                        htmlFor="name"
+                        id="name"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
                         Your Name
@@ -94,6 +94,7 @@ const Contact = () => {
                         required
                         type="text"
                         name="user"
+                        id="user"
                         placeholder="Enter your name"
                         className="w-full rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       />
@@ -102,7 +103,7 @@ const Contact = () => {
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
                       <label
-                        htmlFor="email"
+                        id="email"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
                         Your Email
@@ -110,6 +111,7 @@ const Contact = () => {
                       <input
                         required
                         type="email"
+                        id="email"
                         name="email"
                         placeholder="Enter your email"
                         className="w-full rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
@@ -120,7 +122,7 @@ const Contact = () => {
                   <div className="w-full px-4">
                     <div className="mb-8">
                       <label
-                        htmlFor="message"
+                        id="message"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
                         Your Message
@@ -129,6 +131,7 @@ const Contact = () => {
                         required
                         rows={5}
                         name="message"
+                        id="message"
                         placeholder="Enter your Message"
                         className="w-full resize-none rounded-md border border-transparent px-6 py-3 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       ></textarea>

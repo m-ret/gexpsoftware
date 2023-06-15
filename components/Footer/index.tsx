@@ -18,18 +18,20 @@ const Footer = () => {
                   className="mb-8 inline-block"
                 >
                   <Image
-                    src="images/logo/1.svg"
+                    src="/images/logo/1.svg"
                     alt="logo"
                     className="w-full dark:hidden"
                     width={140}
                     height={30}
+                    priority={true}
                   />
                   <Image
-                    src="images/logo/2.svg"
+                    src="/images/logo/2.svg"
                     alt="logo"
                     className="hidden w-full dark:block"
                     width={140}
                     height={30}
+                    priority={true}
                   />
                 </Link>
                 <p className="mb-9 text-base font-medium leading-relaxed text-body-color dark:text-white">
